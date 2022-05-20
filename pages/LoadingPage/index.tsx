@@ -34,11 +34,17 @@ export default function LoadingPage() {
           name: name,
         });
 
-        navigation.navigate("Result");
+        setTimeout(() => {
+          navigation.navigate("Result");
+        }, 1700);
       }
     };
 
     sendRequest();
+
+    return () => {
+      clearTimeout();
+    };
   }, []);
 
   return (
